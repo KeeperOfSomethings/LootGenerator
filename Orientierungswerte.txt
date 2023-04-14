@@ -1,0 +1,8 @@
+Font:
+Century Gothic
+
+Backcolor:
+44; 41; 51
+
+BorderColor:
+62; 120; 138
