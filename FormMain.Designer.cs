@@ -64,12 +64,14 @@
             // 
             // btnTabMagicItems
             // 
-            btnTabMagicItems.BackColor = Color.FromArgb(255, 255, 128);
+            btnTabMagicItems.BackColor = Color.FromArgb(62, 120, 138);
             btnTabMagicItems.Dock = DockStyle.Left;
-            btnTabMagicItems.FlatStyle = FlatStyle.Popup;
+            btnTabMagicItems.FlatAppearance.BorderSize = 0;
+            btnTabMagicItems.FlatStyle = FlatStyle.Flat;
             btnTabMagicItems.Font = new Font("Century Gothic", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnTabMagicItems.ForeColor = Color.Black;
             btnTabMagicItems.Location = new Point(0, 0);
+            btnTabMagicItems.Margin = new Padding(0);
             btnTabMagicItems.Name = "btnTabMagicItems";
             btnTabMagicItems.Size = new Size(126, 43);
             btnTabMagicItems.TabIndex = 0;
@@ -87,11 +89,11 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(62, 120, 138);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 43);
             panel1.Name = "panel1";
-            panel1.Size = new Size(932, 1);
+            panel1.Size = new Size(932, 2);
             panel1.TabIndex = 2;
             // 
             // FormMain

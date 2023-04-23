@@ -28,38 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pMiMenu = new Panel();
-            btnLoot = new Button();
             btnMassloot = new Button();
+            btnLoot = new Button();
+            numMax = new NumericUpDown();
             pMax = new Panel();
             lMax = new Label();
-            numMax = new NumericUpDown();
+            numMin = new NumericUpDown();
             pMin = new Panel();
             lMinimum = new Label();
-            numMin = new NumericUpDown();
             panel1 = new Panel();
             pWondrousSubMenu = new Panel();
-            button19 = new Button();
-            button20 = new Button();
-            button21 = new Button();
-            button22 = new Button();
-            button23 = new Button();
+            cbMisc = new CheckBox();
+            cbLiterature = new CheckBox();
+            cbRod = new CheckBox();
+            cbWand = new CheckBox();
+            cbInstrument = new CheckBox();
+            cbAccessorie = new CheckBox();
+            cbClothing = new CheckBox();
+            cbAlchemy = new CheckBox();
+            cbWondrousAll = new CheckBox();
             btnWondrous = new Button();
             pArmorSubMenu = new Panel();
-            button13 = new Button();
-            button14 = new Button();
-            button15 = new Button();
-            button16 = new Button();
-            button17 = new Button();
+            cbShield = new CheckBox();
+            cbHeavy = new CheckBox();
+            cbMedium = new CheckBox();
+            cbLight = new CheckBox();
+            cbArmorAll = new CheckBox();
             btnArmor = new Button();
             pWeaponsSubMenu = new Panel();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
-            button10 = new Button();
-            button11 = new Button();
+            cbVersatile = new CheckBox();
+            cbThrown = new CheckBox();
+            cbTwoHanded = new CheckBox();
+            cbSpecial = new CheckBox();
+            cbReach = new CheckBox();
+            cbLoading = new CheckBox();
+            cbWLight = new CheckBox();
+            cbWHeavy = new CheckBox();
+            cbFinesse = new CheckBox();
+            cbAmmunition = new CheckBox();
+            cbRanged = new CheckBox();
+            cbMelee = new CheckBox();
+            cbMartial = new CheckBox();
+            cbSimple = new CheckBox();
+            cbWeaponAll = new CheckBox();
             btnWeapons = new Button();
             pRubrikSubMenu = new Panel();
             cbSummoning = new CheckBox();
@@ -72,10 +86,10 @@
             pGrid = new Panel();
             dgvResult = new DataGridView();
             pMiMenu.SuspendLayout();
-            pMax.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numMax).BeginInit();
-            pMin.SuspendLayout();
+            pMax.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numMin).BeginInit();
+            pMin.SuspendLayout();
             pWondrousSubMenu.SuspendLayout();
             pArmorSubMenu.SuspendLayout();
             pWeaponsSubMenu.SuspendLayout();
@@ -87,13 +101,14 @@
             // pMiMenu
             // 
             pMiMenu.AutoScroll = true;
+            pMiMenu.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             pMiMenu.BackColor = Color.FromArgb(44, 41, 51);
-            pMiMenu.Controls.Add(btnLoot);
             pMiMenu.Controls.Add(btnMassloot);
-            pMiMenu.Controls.Add(pMax);
+            pMiMenu.Controls.Add(btnLoot);
             pMiMenu.Controls.Add(numMax);
-            pMiMenu.Controls.Add(pMin);
+            pMiMenu.Controls.Add(pMax);
             pMiMenu.Controls.Add(numMin);
+            pMiMenu.Controls.Add(pMin);
             pMiMenu.Controls.Add(panel1);
             pMiMenu.Controls.Add(pWondrousSubMenu);
             pMiMenu.Controls.Add(btnWondrous);
@@ -106,25 +121,10 @@
             pMiMenu.Controls.Add(pRightBorder);
             pMiMenu.Dock = DockStyle.Left;
             pMiMenu.Location = new Point(0, 0);
+            pMiMenu.Margin = new Padding(0);
             pMiMenu.Name = "pMiMenu";
-            pMiMenu.Size = new Size(196, 845);
+            pMiMenu.Size = new Size(196, 848);
             pMiMenu.TabIndex = 1;
-            // 
-            // btnLoot
-            // 
-            btnLoot.Dock = DockStyle.Top;
-            btnLoot.FlatAppearance.BorderColor = Color.FromArgb(62, 120, 138);
-            btnLoot.FlatStyle = FlatStyle.Flat;
-            btnLoot.ForeColor = Color.Gainsboro;
-            btnLoot.Location = new Point(0, 896);
-            btnLoot.Name = "btnLoot";
-            btnLoot.Padding = new Padding(10, 0, 0, 0);
-            btnLoot.Size = new Size(174, 35);
-            btnLoot.TabIndex = 15;
-            btnLoot.Text = "Loot";
-            btnLoot.TextAlign = ContentAlignment.MiddleLeft;
-            btnLoot.UseVisualStyleBackColor = true;
-            btnLoot.Click += btnLoot_Click;
             // 
             // btnMassloot
             // 
@@ -132,399 +132,666 @@
             btnMassloot.FlatAppearance.BorderColor = Color.FromArgb(62, 120, 138);
             btnMassloot.FlatStyle = FlatStyle.Flat;
             btnMassloot.ForeColor = Color.Gainsboro;
-            btnMassloot.Location = new Point(0, 861);
+            btnMassloot.Location = new Point(0, 1176);
             btnMassloot.Name = "btnMassloot";
             btnMassloot.Padding = new Padding(10, 0, 0, 0);
-            btnMassloot.Size = new Size(174, 35);
+            btnMassloot.Size = new Size(173, 35);
             btnMassloot.TabIndex = 14;
             btnMassloot.Text = "Massloot";
             btnMassloot.TextAlign = ContentAlignment.MiddleLeft;
             btnMassloot.UseVisualStyleBackColor = true;
             btnMassloot.Click += btnMassloot_Click;
             // 
+            // btnLoot
+            // 
+            btnLoot.Dock = DockStyle.Top;
+            btnLoot.FlatAppearance.BorderColor = Color.FromArgb(62, 120, 138);
+            btnLoot.FlatStyle = FlatStyle.Flat;
+            btnLoot.ForeColor = Color.Gainsboro;
+            btnLoot.Location = new Point(0, 1141);
+            btnLoot.Name = "btnLoot";
+            btnLoot.Padding = new Padding(10, 0, 0, 0);
+            btnLoot.Size = new Size(173, 35);
+            btnLoot.TabIndex = 15;
+            btnLoot.Text = "Loot";
+            btnLoot.TextAlign = ContentAlignment.MiddleLeft;
+            btnLoot.UseVisualStyleBackColor = true;
+            btnLoot.Click += btnLoot_Click;
+            // 
+            // numMax
+            // 
+            numMax.Dock = DockStyle.Top;
+            numMax.Location = new Point(0, 1113);
+            numMax.Name = "numMax";
+            numMax.Size = new Size(173, 28);
+            numMax.TabIndex = 12;
+            numMax.TextAlign = HorizontalAlignment.Right;
+            numMax.ValueChanged += numMax_ValueChanged;
+            // 
             // pMax
             // 
             pMax.Controls.Add(lMax);
             pMax.Dock = DockStyle.Top;
-            pMax.Location = new Point(0, 826);
+            pMax.Location = new Point(0, 1078);
             pMax.Name = "pMax";
-            pMax.Size = new Size(174, 35);
+            pMax.Size = new Size(173, 35);
             pMax.TabIndex = 13;
             // 
             // lMax
             // 
             lMax.AutoSize = true;
-            lMax.Dock = DockStyle.Fill;
             lMax.ForeColor = Color.Gainsboro;
-            lMax.Location = new Point(0, 0);
+            lMax.Location = new Point(3, 7);
             lMax.Name = "lMax";
             lMax.Size = new Size(90, 21);
             lMax.TabIndex = 0;
             lMax.Text = "Maximum";
             lMax.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // numMax
+            // numMin
             // 
-            numMax.Dock = DockStyle.Top;
-            numMax.Location = new Point(0, 798);
-            numMax.Name = "numMax";
-            numMax.Size = new Size(174, 28);
-            numMax.TabIndex = 12;
-            numMax.TextAlign = HorizontalAlignment.Right;
-            numMax.ValueChanged += numMax_ValueChanged;
+            numMin.Dock = DockStyle.Top;
+            numMin.Location = new Point(0, 1050);
+            numMin.Name = "numMin";
+            numMin.Size = new Size(173, 28);
+            numMin.TabIndex = 10;
+            numMin.TextAlign = HorizontalAlignment.Right;
             // 
             // pMin
             // 
             pMin.Controls.Add(lMinimum);
             pMin.Dock = DockStyle.Top;
-            pMin.Location = new Point(0, 763);
+            pMin.Location = new Point(0, 1015);
             pMin.Name = "pMin";
-            pMin.Size = new Size(174, 35);
+            pMin.Size = new Size(173, 35);
             pMin.TabIndex = 11;
             // 
             // lMinimum
             // 
             lMinimum.AutoSize = true;
-            lMinimum.Dock = DockStyle.Fill;
             lMinimum.ForeColor = Color.Gainsboro;
-            lMinimum.Location = new Point(0, 0);
+            lMinimum.Location = new Point(3, 7);
             lMinimum.Name = "lMinimum";
             lMinimum.Size = new Size(83, 21);
             lMinimum.TabIndex = 0;
             lMinimum.Text = "Minimum";
             lMinimum.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // numMin
-            // 
-            numMin.Dock = DockStyle.Top;
-            numMin.Location = new Point(0, 735);
-            numMin.Name = "numMin";
-            numMin.Size = new Size(174, 28);
-            numMin.TabIndex = 10;
-            numMin.TextAlign = HorizontalAlignment.Right;
-            // 
             // panel1
             // 
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 715);
+            panel1.Location = new Point(0, 997);
             panel1.Name = "panel1";
-            panel1.Size = new Size(174, 20);
-            panel1.TabIndex = 9;
+            panel1.Size = new Size(173, 18);
+            panel1.TabIndex = 14;
             // 
             // pWondrousSubMenu
             // 
             pWondrousSubMenu.BackColor = Color.FromArgb(50, 50, 50);
-            pWondrousSubMenu.Controls.Add(button19);
-            pWondrousSubMenu.Controls.Add(button20);
-            pWondrousSubMenu.Controls.Add(button21);
-            pWondrousSubMenu.Controls.Add(button22);
-            pWondrousSubMenu.Controls.Add(button23);
+            pWondrousSubMenu.Controls.Add(cbMisc);
+            pWondrousSubMenu.Controls.Add(cbLiterature);
+            pWondrousSubMenu.Controls.Add(cbRod);
+            pWondrousSubMenu.Controls.Add(cbWand);
+            pWondrousSubMenu.Controls.Add(cbInstrument);
+            pWondrousSubMenu.Controls.Add(cbAccessorie);
+            pWondrousSubMenu.Controls.Add(cbClothing);
+            pWondrousSubMenu.Controls.Add(cbAlchemy);
+            pWondrousSubMenu.Controls.Add(cbWondrousAll);
             pWondrousSubMenu.Dock = DockStyle.Top;
-            pWondrousSubMenu.Location = new Point(0, 565);
+            pWondrousSubMenu.Location = new Point(0, 772);
             pWondrousSubMenu.Name = "pWondrousSubMenu";
-            pWondrousSubMenu.Size = new Size(174, 150);
+            pWondrousSubMenu.Size = new Size(173, 225);
             pWondrousSubMenu.TabIndex = 8;
             // 
-            // button19
+            // cbMisc
             // 
-            button19.Dock = DockStyle.Top;
-            button19.FlatAppearance.BorderSize = 0;
-            button19.FlatStyle = FlatStyle.Flat;
-            button19.ForeColor = Color.Gainsboro;
-            button19.Location = new Point(0, 120);
-            button19.Name = "button19";
-            button19.Padding = new Padding(35, 0, 0, 0);
-            button19.Size = new Size(174, 30);
-            button19.TabIndex = 4;
-            button19.Text = "button19";
-            button19.TextAlign = ContentAlignment.MiddleLeft;
-            button19.UseVisualStyleBackColor = true;
+            cbMisc.AutoSize = true;
+            cbMisc.Checked = true;
+            cbMisc.CheckState = CheckState.Checked;
+            cbMisc.Dock = DockStyle.Top;
+            cbMisc.ForeColor = Color.Gainsboro;
+            cbMisc.Location = new Point(0, 200);
+            cbMisc.Name = "cbMisc";
+            cbMisc.Padding = new Padding(30, 0, 0, 0);
+            cbMisc.Size = new Size(173, 25);
+            cbMisc.TabIndex = 17;
+            cbMisc.Text = "Misc";
+            cbMisc.UseVisualStyleBackColor = true;
+            cbMisc.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button20
+            // cbLiterature
             // 
-            button20.Dock = DockStyle.Top;
-            button20.FlatAppearance.BorderSize = 0;
-            button20.FlatStyle = FlatStyle.Flat;
-            button20.ForeColor = Color.Gainsboro;
-            button20.Location = new Point(0, 90);
-            button20.Name = "button20";
-            button20.Padding = new Padding(35, 0, 0, 0);
-            button20.Size = new Size(174, 30);
-            button20.TabIndex = 3;
-            button20.Text = "button20";
-            button20.TextAlign = ContentAlignment.MiddleLeft;
-            button20.UseVisualStyleBackColor = true;
+            cbLiterature.AutoSize = true;
+            cbLiterature.Checked = true;
+            cbLiterature.CheckState = CheckState.Checked;
+            cbLiterature.Dock = DockStyle.Top;
+            cbLiterature.ForeColor = Color.Gainsboro;
+            cbLiterature.Location = new Point(0, 175);
+            cbLiterature.Name = "cbLiterature";
+            cbLiterature.Padding = new Padding(30, 0, 0, 0);
+            cbLiterature.Size = new Size(173, 25);
+            cbLiterature.TabIndex = 16;
+            cbLiterature.Text = "Literature";
+            cbLiterature.UseVisualStyleBackColor = true;
+            cbLiterature.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button21
+            // cbRod
             // 
-            button21.Dock = DockStyle.Top;
-            button21.FlatAppearance.BorderSize = 0;
-            button21.FlatStyle = FlatStyle.Flat;
-            button21.ForeColor = Color.Gainsboro;
-            button21.Location = new Point(0, 60);
-            button21.Name = "button21";
-            button21.Padding = new Padding(35, 0, 0, 0);
-            button21.Size = new Size(174, 30);
-            button21.TabIndex = 2;
-            button21.Text = "button21";
-            button21.TextAlign = ContentAlignment.MiddleLeft;
-            button21.UseVisualStyleBackColor = true;
+            cbRod.AutoSize = true;
+            cbRod.Checked = true;
+            cbRod.CheckState = CheckState.Checked;
+            cbRod.Dock = DockStyle.Top;
+            cbRod.ForeColor = Color.Gainsboro;
+            cbRod.Location = new Point(0, 150);
+            cbRod.Name = "cbRod";
+            cbRod.Padding = new Padding(30, 0, 0, 0);
+            cbRod.Size = new Size(173, 25);
+            cbRod.TabIndex = 15;
+            cbRod.Text = "Rod";
+            cbRod.UseVisualStyleBackColor = true;
+            cbRod.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button22
+            // cbWand
             // 
-            button22.Dock = DockStyle.Top;
-            button22.FlatAppearance.BorderSize = 0;
-            button22.FlatStyle = FlatStyle.Flat;
-            button22.ForeColor = Color.Gainsboro;
-            button22.Location = new Point(0, 30);
-            button22.Name = "button22";
-            button22.Padding = new Padding(35, 0, 0, 0);
-            button22.Size = new Size(174, 30);
-            button22.TabIndex = 1;
-            button22.Text = "button22";
-            button22.TextAlign = ContentAlignment.MiddleLeft;
-            button22.UseVisualStyleBackColor = true;
+            cbWand.AutoSize = true;
+            cbWand.Checked = true;
+            cbWand.CheckState = CheckState.Checked;
+            cbWand.Dock = DockStyle.Top;
+            cbWand.ForeColor = Color.Gainsboro;
+            cbWand.Location = new Point(0, 125);
+            cbWand.Name = "cbWand";
+            cbWand.Padding = new Padding(30, 0, 0, 0);
+            cbWand.Size = new Size(173, 25);
+            cbWand.TabIndex = 14;
+            cbWand.Text = "Wand";
+            cbWand.UseVisualStyleBackColor = true;
+            cbWand.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button23
+            // cbInstrument
             // 
-            button23.Dock = DockStyle.Top;
-            button23.FlatAppearance.BorderSize = 0;
-            button23.FlatStyle = FlatStyle.Flat;
-            button23.ForeColor = Color.Gainsboro;
-            button23.Location = new Point(0, 0);
-            button23.Name = "button23";
-            button23.Padding = new Padding(35, 0, 0, 0);
-            button23.Size = new Size(174, 30);
-            button23.TabIndex = 0;
-            button23.Text = "button23";
-            button23.TextAlign = ContentAlignment.MiddleLeft;
-            button23.UseVisualStyleBackColor = true;
+            cbInstrument.AutoSize = true;
+            cbInstrument.Checked = true;
+            cbInstrument.CheckState = CheckState.Checked;
+            cbInstrument.Dock = DockStyle.Top;
+            cbInstrument.ForeColor = Color.Gainsboro;
+            cbInstrument.Location = new Point(0, 100);
+            cbInstrument.Name = "cbInstrument";
+            cbInstrument.Padding = new Padding(30, 0, 0, 0);
+            cbInstrument.Size = new Size(173, 25);
+            cbInstrument.TabIndex = 13;
+            cbInstrument.Text = "Instrument";
+            cbInstrument.UseVisualStyleBackColor = true;
+            cbInstrument.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbAccessorie
+            // 
+            cbAccessorie.AutoSize = true;
+            cbAccessorie.Checked = true;
+            cbAccessorie.CheckState = CheckState.Checked;
+            cbAccessorie.Dock = DockStyle.Top;
+            cbAccessorie.ForeColor = Color.Gainsboro;
+            cbAccessorie.Location = new Point(0, 75);
+            cbAccessorie.Name = "cbAccessorie";
+            cbAccessorie.Padding = new Padding(30, 0, 0, 0);
+            cbAccessorie.Size = new Size(173, 25);
+            cbAccessorie.TabIndex = 12;
+            cbAccessorie.Text = "Accessorie";
+            cbAccessorie.UseVisualStyleBackColor = true;
+            cbAccessorie.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbClothing
+            // 
+            cbClothing.AutoSize = true;
+            cbClothing.Checked = true;
+            cbClothing.CheckState = CheckState.Checked;
+            cbClothing.Dock = DockStyle.Top;
+            cbClothing.ForeColor = Color.Gainsboro;
+            cbClothing.Location = new Point(0, 50);
+            cbClothing.Name = "cbClothing";
+            cbClothing.Padding = new Padding(30, 0, 0, 0);
+            cbClothing.Size = new Size(173, 25);
+            cbClothing.TabIndex = 11;
+            cbClothing.Text = "Clothing";
+            cbClothing.UseVisualStyleBackColor = true;
+            cbClothing.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbAlchemy
+            // 
+            cbAlchemy.AutoSize = true;
+            cbAlchemy.Checked = true;
+            cbAlchemy.CheckState = CheckState.Checked;
+            cbAlchemy.Dock = DockStyle.Top;
+            cbAlchemy.ForeColor = Color.Gainsboro;
+            cbAlchemy.Location = new Point(0, 25);
+            cbAlchemy.Name = "cbAlchemy";
+            cbAlchemy.Padding = new Padding(30, 0, 0, 0);
+            cbAlchemy.Size = new Size(173, 25);
+            cbAlchemy.TabIndex = 10;
+            cbAlchemy.Text = "Alchemy";
+            cbAlchemy.UseVisualStyleBackColor = true;
+            cbAlchemy.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbWondrousAll
+            // 
+            cbWondrousAll.AutoSize = true;
+            cbWondrousAll.Checked = true;
+            cbWondrousAll.CheckState = CheckState.Checked;
+            cbWondrousAll.Dock = DockStyle.Top;
+            cbWondrousAll.ForeColor = Color.Gainsboro;
+            cbWondrousAll.Location = new Point(0, 0);
+            cbWondrousAll.Name = "cbWondrousAll";
+            cbWondrousAll.Padding = new Padding(30, 0, 0, 0);
+            cbWondrousAll.Size = new Size(173, 25);
+            cbWondrousAll.TabIndex = 9;
+            cbWondrousAll.Text = "All";
+            cbWondrousAll.UseVisualStyleBackColor = true;
+            cbWondrousAll.CheckStateChanged += AllCBCheckedStateChanged;
             // 
             // btnWondrous
             // 
             btnWondrous.Dock = DockStyle.Top;
-            btnWondrous.Enabled = false;
             btnWondrous.FlatAppearance.BorderColor = Color.FromArgb(62, 120, 138);
             btnWondrous.FlatStyle = FlatStyle.Flat;
             btnWondrous.ForeColor = Color.Gainsboro;
-            btnWondrous.Location = new Point(0, 530);
+            btnWondrous.Location = new Point(0, 737);
             btnWondrous.Name = "btnWondrous";
             btnWondrous.Padding = new Padding(10, 0, 0, 0);
-            btnWondrous.Size = new Size(174, 35);
+            btnWondrous.Size = new Size(173, 35);
             btnWondrous.TabIndex = 7;
             btnWondrous.Text = "Wondrous";
             btnWondrous.TextAlign = ContentAlignment.MiddleLeft;
             btnWondrous.UseVisualStyleBackColor = true;
+            btnWondrous.Click += btnWondrous_Click;
             // 
             // pArmorSubMenu
             // 
             pArmorSubMenu.BackColor = Color.FromArgb(50, 50, 50);
-            pArmorSubMenu.Controls.Add(button13);
-            pArmorSubMenu.Controls.Add(button14);
-            pArmorSubMenu.Controls.Add(button15);
-            pArmorSubMenu.Controls.Add(button16);
-            pArmorSubMenu.Controls.Add(button17);
+            pArmorSubMenu.Controls.Add(cbShield);
+            pArmorSubMenu.Controls.Add(cbHeavy);
+            pArmorSubMenu.Controls.Add(cbMedium);
+            pArmorSubMenu.Controls.Add(cbLight);
+            pArmorSubMenu.Controls.Add(cbArmorAll);
             pArmorSubMenu.Dock = DockStyle.Top;
-            pArmorSubMenu.Location = new Point(0, 380);
+            pArmorSubMenu.Location = new Point(0, 607);
             pArmorSubMenu.Name = "pArmorSubMenu";
-            pArmorSubMenu.Size = new Size(174, 150);
+            pArmorSubMenu.Size = new Size(173, 130);
             pArmorSubMenu.TabIndex = 6;
             // 
-            // button13
+            // cbShield
             // 
-            button13.Dock = DockStyle.Top;
-            button13.FlatAppearance.BorderSize = 0;
-            button13.FlatStyle = FlatStyle.Flat;
-            button13.ForeColor = Color.Gainsboro;
-            button13.Location = new Point(0, 120);
-            button13.Name = "button13";
-            button13.Padding = new Padding(35, 0, 0, 0);
-            button13.Size = new Size(174, 30);
-            button13.TabIndex = 4;
-            button13.Text = "button13";
-            button13.TextAlign = ContentAlignment.MiddleLeft;
-            button13.UseVisualStyleBackColor = true;
+            cbShield.AutoSize = true;
+            cbShield.Checked = true;
+            cbShield.CheckState = CheckState.Checked;
+            cbShield.Dock = DockStyle.Top;
+            cbShield.ForeColor = Color.Gainsboro;
+            cbShield.Location = new Point(0, 100);
+            cbShield.Name = "cbShield";
+            cbShield.Padding = new Padding(30, 0, 0, 0);
+            cbShield.Size = new Size(173, 25);
+            cbShield.TabIndex = 8;
+            cbShield.Text = "shield";
+            cbShield.UseVisualStyleBackColor = true;
+            cbShield.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button14
+            // cbHeavy
             // 
-            button14.Dock = DockStyle.Top;
-            button14.FlatAppearance.BorderSize = 0;
-            button14.FlatStyle = FlatStyle.Flat;
-            button14.ForeColor = Color.Gainsboro;
-            button14.Location = new Point(0, 90);
-            button14.Name = "button14";
-            button14.Padding = new Padding(35, 0, 0, 0);
-            button14.Size = new Size(174, 30);
-            button14.TabIndex = 3;
-            button14.Text = "button14";
-            button14.TextAlign = ContentAlignment.MiddleLeft;
-            button14.UseVisualStyleBackColor = true;
+            cbHeavy.AutoSize = true;
+            cbHeavy.Checked = true;
+            cbHeavy.CheckState = CheckState.Checked;
+            cbHeavy.Dock = DockStyle.Top;
+            cbHeavy.ForeColor = Color.Gainsboro;
+            cbHeavy.Location = new Point(0, 75);
+            cbHeavy.Name = "cbHeavy";
+            cbHeavy.Padding = new Padding(30, 0, 0, 0);
+            cbHeavy.Size = new Size(173, 25);
+            cbHeavy.TabIndex = 7;
+            cbHeavy.Text = "Heavy";
+            cbHeavy.UseVisualStyleBackColor = true;
+            cbHeavy.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button15
+            // cbMedium
             // 
-            button15.Dock = DockStyle.Top;
-            button15.FlatAppearance.BorderSize = 0;
-            button15.FlatStyle = FlatStyle.Flat;
-            button15.ForeColor = Color.Gainsboro;
-            button15.Location = new Point(0, 60);
-            button15.Name = "button15";
-            button15.Padding = new Padding(35, 0, 0, 0);
-            button15.Size = new Size(174, 30);
-            button15.TabIndex = 2;
-            button15.Text = "button15";
-            button15.TextAlign = ContentAlignment.MiddleLeft;
-            button15.UseVisualStyleBackColor = true;
+            cbMedium.AutoSize = true;
+            cbMedium.Checked = true;
+            cbMedium.CheckState = CheckState.Checked;
+            cbMedium.Dock = DockStyle.Top;
+            cbMedium.ForeColor = Color.Gainsboro;
+            cbMedium.Location = new Point(0, 50);
+            cbMedium.Name = "cbMedium";
+            cbMedium.Padding = new Padding(30, 0, 0, 0);
+            cbMedium.Size = new Size(173, 25);
+            cbMedium.TabIndex = 6;
+            cbMedium.Text = "Medium";
+            cbMedium.UseVisualStyleBackColor = true;
+            cbMedium.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button16
+            // cbLight
             // 
-            button16.Dock = DockStyle.Top;
-            button16.FlatAppearance.BorderSize = 0;
-            button16.FlatStyle = FlatStyle.Flat;
-            button16.ForeColor = Color.Gainsboro;
-            button16.Location = new Point(0, 30);
-            button16.Name = "button16";
-            button16.Padding = new Padding(35, 0, 0, 0);
-            button16.Size = new Size(174, 30);
-            button16.TabIndex = 1;
-            button16.Text = "button16";
-            button16.TextAlign = ContentAlignment.MiddleLeft;
-            button16.UseVisualStyleBackColor = true;
+            cbLight.AutoSize = true;
+            cbLight.Checked = true;
+            cbLight.CheckState = CheckState.Checked;
+            cbLight.Dock = DockStyle.Top;
+            cbLight.ForeColor = Color.Gainsboro;
+            cbLight.Location = new Point(0, 25);
+            cbLight.Name = "cbLight";
+            cbLight.Padding = new Padding(30, 0, 0, 0);
+            cbLight.Size = new Size(173, 25);
+            cbLight.TabIndex = 5;
+            cbLight.Text = "Light";
+            cbLight.UseVisualStyleBackColor = true;
+            cbLight.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button17
+            // cbArmorAll
             // 
-            button17.Dock = DockStyle.Top;
-            button17.FlatAppearance.BorderSize = 0;
-            button17.FlatStyle = FlatStyle.Flat;
-            button17.ForeColor = Color.Gainsboro;
-            button17.Location = new Point(0, 0);
-            button17.Name = "button17";
-            button17.Padding = new Padding(35, 0, 0, 0);
-            button17.Size = new Size(174, 30);
-            button17.TabIndex = 0;
-            button17.Text = "button17";
-            button17.TextAlign = ContentAlignment.MiddleLeft;
-            button17.UseVisualStyleBackColor = true;
+            cbArmorAll.AutoSize = true;
+            cbArmorAll.Checked = true;
+            cbArmorAll.CheckState = CheckState.Checked;
+            cbArmorAll.Dock = DockStyle.Top;
+            cbArmorAll.ForeColor = Color.Gainsboro;
+            cbArmorAll.Location = new Point(0, 0);
+            cbArmorAll.Name = "cbArmorAll";
+            cbArmorAll.Padding = new Padding(30, 0, 0, 0);
+            cbArmorAll.Size = new Size(173, 25);
+            cbArmorAll.TabIndex = 4;
+            cbArmorAll.Text = "All";
+            cbArmorAll.UseVisualStyleBackColor = true;
+            cbArmorAll.CheckStateChanged += AllCBCheckedStateChanged;
             // 
             // btnArmor
             // 
             btnArmor.Dock = DockStyle.Top;
-            btnArmor.Enabled = false;
             btnArmor.FlatAppearance.BorderColor = Color.FromArgb(62, 120, 138);
             btnArmor.FlatStyle = FlatStyle.Flat;
             btnArmor.ForeColor = Color.Gainsboro;
-            btnArmor.Location = new Point(0, 345);
+            btnArmor.Location = new Point(0, 572);
             btnArmor.Name = "btnArmor";
             btnArmor.Padding = new Padding(10, 0, 0, 0);
-            btnArmor.Size = new Size(174, 35);
+            btnArmor.Size = new Size(173, 35);
             btnArmor.TabIndex = 5;
             btnArmor.Text = "Armor";
             btnArmor.TextAlign = ContentAlignment.MiddleLeft;
             btnArmor.UseVisualStyleBackColor = true;
+            btnArmor.Click += btnArmor_Click;
             // 
             // pWeaponsSubMenu
             // 
             pWeaponsSubMenu.BackColor = Color.FromArgb(50, 50, 50);
-            pWeaponsSubMenu.Controls.Add(button7);
-            pWeaponsSubMenu.Controls.Add(button8);
-            pWeaponsSubMenu.Controls.Add(button9);
-            pWeaponsSubMenu.Controls.Add(button10);
-            pWeaponsSubMenu.Controls.Add(button11);
+            pWeaponsSubMenu.Controls.Add(cbVersatile);
+            pWeaponsSubMenu.Controls.Add(cbThrown);
+            pWeaponsSubMenu.Controls.Add(cbTwoHanded);
+            pWeaponsSubMenu.Controls.Add(cbSpecial);
+            pWeaponsSubMenu.Controls.Add(cbReach);
+            pWeaponsSubMenu.Controls.Add(cbLoading);
+            pWeaponsSubMenu.Controls.Add(cbWLight);
+            pWeaponsSubMenu.Controls.Add(cbWHeavy);
+            pWeaponsSubMenu.Controls.Add(cbFinesse);
+            pWeaponsSubMenu.Controls.Add(cbAmmunition);
+            pWeaponsSubMenu.Controls.Add(cbRanged);
+            pWeaponsSubMenu.Controls.Add(cbMelee);
+            pWeaponsSubMenu.Controls.Add(cbMartial);
+            pWeaponsSubMenu.Controls.Add(cbSimple);
+            pWeaponsSubMenu.Controls.Add(cbWeaponAll);
             pWeaponsSubMenu.Dock = DockStyle.Top;
             pWeaponsSubMenu.Location = new Point(0, 195);
             pWeaponsSubMenu.Name = "pWeaponsSubMenu";
-            pWeaponsSubMenu.Size = new Size(174, 150);
+            pWeaponsSubMenu.Size = new Size(173, 377);
             pWeaponsSubMenu.TabIndex = 4;
             // 
-            // button7
+            // cbVersatile
             // 
-            button7.Dock = DockStyle.Top;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.ForeColor = Color.Gainsboro;
-            button7.Location = new Point(0, 120);
-            button7.Name = "button7";
-            button7.Padding = new Padding(35, 0, 0, 0);
-            button7.Size = new Size(174, 30);
-            button7.TabIndex = 4;
-            button7.Text = "button7";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.UseVisualStyleBackColor = true;
+            cbVersatile.AutoSize = true;
+            cbVersatile.Checked = true;
+            cbVersatile.CheckState = CheckState.Checked;
+            cbVersatile.Dock = DockStyle.Top;
+            cbVersatile.ForeColor = Color.Gainsboro;
+            cbVersatile.Location = new Point(0, 350);
+            cbVersatile.Name = "cbVersatile";
+            cbVersatile.Padding = new Padding(30, 0, 0, 0);
+            cbVersatile.Size = new Size(173, 25);
+            cbVersatile.TabIndex = 30;
+            cbVersatile.Text = "Versatile";
+            cbVersatile.UseVisualStyleBackColor = true;
+            cbVersatile.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button8
+            // cbThrown
             // 
-            button8.Dock = DockStyle.Top;
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.ForeColor = Color.Gainsboro;
-            button8.Location = new Point(0, 90);
-            button8.Name = "button8";
-            button8.Padding = new Padding(35, 0, 0, 0);
-            button8.Size = new Size(174, 30);
-            button8.TabIndex = 3;
-            button8.Text = "button8";
-            button8.TextAlign = ContentAlignment.MiddleLeft;
-            button8.UseVisualStyleBackColor = true;
+            cbThrown.AutoSize = true;
+            cbThrown.Checked = true;
+            cbThrown.CheckState = CheckState.Checked;
+            cbThrown.Dock = DockStyle.Top;
+            cbThrown.ForeColor = Color.Gainsboro;
+            cbThrown.Location = new Point(0, 325);
+            cbThrown.Name = "cbThrown";
+            cbThrown.Padding = new Padding(30, 0, 0, 0);
+            cbThrown.Size = new Size(173, 25);
+            cbThrown.TabIndex = 29;
+            cbThrown.Text = "Thrown";
+            cbThrown.UseVisualStyleBackColor = true;
+            cbThrown.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button9
+            // cbTwoHanded
             // 
-            button9.Dock = DockStyle.Top;
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.ForeColor = Color.Gainsboro;
-            button9.Location = new Point(0, 60);
-            button9.Name = "button9";
-            button9.Padding = new Padding(35, 0, 0, 0);
-            button9.Size = new Size(174, 30);
-            button9.TabIndex = 2;
-            button9.Text = "button9";
-            button9.TextAlign = ContentAlignment.MiddleLeft;
-            button9.UseVisualStyleBackColor = true;
+            cbTwoHanded.AutoSize = true;
+            cbTwoHanded.Checked = true;
+            cbTwoHanded.CheckState = CheckState.Checked;
+            cbTwoHanded.Dock = DockStyle.Top;
+            cbTwoHanded.ForeColor = Color.Gainsboro;
+            cbTwoHanded.Location = new Point(0, 300);
+            cbTwoHanded.Name = "cbTwoHanded";
+            cbTwoHanded.Padding = new Padding(30, 0, 0, 0);
+            cbTwoHanded.Size = new Size(173, 25);
+            cbTwoHanded.TabIndex = 28;
+            cbTwoHanded.Text = "Two-Handed";
+            cbTwoHanded.UseVisualStyleBackColor = true;
+            cbTwoHanded.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button10
+            // cbSpecial
             // 
-            button10.Dock = DockStyle.Top;
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.ForeColor = Color.Gainsboro;
-            button10.Location = new Point(0, 30);
-            button10.Name = "button10";
-            button10.Padding = new Padding(35, 0, 0, 0);
-            button10.Size = new Size(174, 30);
-            button10.TabIndex = 1;
-            button10.Text = "button10";
-            button10.TextAlign = ContentAlignment.MiddleLeft;
-            button10.UseVisualStyleBackColor = true;
+            cbSpecial.AutoSize = true;
+            cbSpecial.Checked = true;
+            cbSpecial.CheckState = CheckState.Checked;
+            cbSpecial.Dock = DockStyle.Top;
+            cbSpecial.ForeColor = Color.Gainsboro;
+            cbSpecial.Location = new Point(0, 275);
+            cbSpecial.Name = "cbSpecial";
+            cbSpecial.Padding = new Padding(30, 0, 0, 0);
+            cbSpecial.Size = new Size(173, 25);
+            cbSpecial.TabIndex = 27;
+            cbSpecial.Text = "Special";
+            cbSpecial.UseVisualStyleBackColor = true;
+            cbSpecial.CheckedChanged += SubCBCheckedChanged;
             // 
-            // button11
+            // cbReach
             // 
-            button11.Dock = DockStyle.Top;
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.ForeColor = Color.Gainsboro;
-            button11.Location = new Point(0, 0);
-            button11.Name = "button11";
-            button11.Padding = new Padding(35, 0, 0, 0);
-            button11.Size = new Size(174, 30);
-            button11.TabIndex = 0;
-            button11.Text = "button11";
-            button11.TextAlign = ContentAlignment.MiddleLeft;
-            button11.UseVisualStyleBackColor = true;
+            cbReach.AutoSize = true;
+            cbReach.Checked = true;
+            cbReach.CheckState = CheckState.Checked;
+            cbReach.Dock = DockStyle.Top;
+            cbReach.ForeColor = Color.Gainsboro;
+            cbReach.Location = new Point(0, 250);
+            cbReach.Name = "cbReach";
+            cbReach.Padding = new Padding(30, 0, 0, 0);
+            cbReach.Size = new Size(173, 25);
+            cbReach.TabIndex = 26;
+            cbReach.Text = "Reach";
+            cbReach.UseVisualStyleBackColor = true;
+            cbReach.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbLoading
+            // 
+            cbLoading.AutoSize = true;
+            cbLoading.Checked = true;
+            cbLoading.CheckState = CheckState.Checked;
+            cbLoading.Dock = DockStyle.Top;
+            cbLoading.ForeColor = Color.Gainsboro;
+            cbLoading.Location = new Point(0, 225);
+            cbLoading.Name = "cbLoading";
+            cbLoading.Padding = new Padding(30, 0, 0, 0);
+            cbLoading.Size = new Size(173, 25);
+            cbLoading.TabIndex = 25;
+            cbLoading.Text = "Loading";
+            cbLoading.UseVisualStyleBackColor = true;
+            cbLoading.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbWLight
+            // 
+            cbWLight.AutoSize = true;
+            cbWLight.Checked = true;
+            cbWLight.CheckState = CheckState.Checked;
+            cbWLight.Dock = DockStyle.Top;
+            cbWLight.ForeColor = Color.Gainsboro;
+            cbWLight.Location = new Point(0, 200);
+            cbWLight.Name = "cbWLight";
+            cbWLight.Padding = new Padding(30, 0, 0, 0);
+            cbWLight.Size = new Size(173, 25);
+            cbWLight.TabIndex = 24;
+            cbWLight.Text = "Light";
+            cbWLight.UseVisualStyleBackColor = true;
+            cbWLight.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbWHeavy
+            // 
+            cbWHeavy.AutoSize = true;
+            cbWHeavy.Checked = true;
+            cbWHeavy.CheckState = CheckState.Checked;
+            cbWHeavy.Dock = DockStyle.Top;
+            cbWHeavy.ForeColor = Color.Gainsboro;
+            cbWHeavy.Location = new Point(0, 175);
+            cbWHeavy.Name = "cbWHeavy";
+            cbWHeavy.Padding = new Padding(30, 0, 0, 0);
+            cbWHeavy.Size = new Size(173, 25);
+            cbWHeavy.TabIndex = 23;
+            cbWHeavy.Text = "Heavy";
+            cbWHeavy.UseVisualStyleBackColor = true;
+            cbWHeavy.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbFinesse
+            // 
+            cbFinesse.AutoSize = true;
+            cbFinesse.Checked = true;
+            cbFinesse.CheckState = CheckState.Checked;
+            cbFinesse.Dock = DockStyle.Top;
+            cbFinesse.ForeColor = Color.Gainsboro;
+            cbFinesse.Location = new Point(0, 150);
+            cbFinesse.Name = "cbFinesse";
+            cbFinesse.Padding = new Padding(30, 0, 0, 0);
+            cbFinesse.Size = new Size(173, 25);
+            cbFinesse.TabIndex = 22;
+            cbFinesse.Text = "Finesse";
+            cbFinesse.UseVisualStyleBackColor = true;
+            cbFinesse.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbAmmunition
+            // 
+            cbAmmunition.AutoSize = true;
+            cbAmmunition.Checked = true;
+            cbAmmunition.CheckState = CheckState.Checked;
+            cbAmmunition.Dock = DockStyle.Top;
+            cbAmmunition.ForeColor = Color.Gainsboro;
+            cbAmmunition.Location = new Point(0, 125);
+            cbAmmunition.Name = "cbAmmunition";
+            cbAmmunition.Padding = new Padding(30, 0, 0, 0);
+            cbAmmunition.Size = new Size(173, 25);
+            cbAmmunition.TabIndex = 21;
+            cbAmmunition.Text = "Ammunition";
+            cbAmmunition.UseVisualStyleBackColor = true;
+            cbAmmunition.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbRanged
+            // 
+            cbRanged.AutoSize = true;
+            cbRanged.Checked = true;
+            cbRanged.CheckState = CheckState.Checked;
+            cbRanged.Dock = DockStyle.Top;
+            cbRanged.ForeColor = Color.Gainsboro;
+            cbRanged.Location = new Point(0, 100);
+            cbRanged.Name = "cbRanged";
+            cbRanged.Padding = new Padding(30, 0, 0, 0);
+            cbRanged.Size = new Size(173, 25);
+            cbRanged.TabIndex = 20;
+            cbRanged.Text = "Ranged";
+            cbRanged.UseVisualStyleBackColor = true;
+            cbRanged.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbMelee
+            // 
+            cbMelee.AutoSize = true;
+            cbMelee.Checked = true;
+            cbMelee.CheckState = CheckState.Checked;
+            cbMelee.Dock = DockStyle.Top;
+            cbMelee.ForeColor = Color.Gainsboro;
+            cbMelee.Location = new Point(0, 75);
+            cbMelee.Name = "cbMelee";
+            cbMelee.Padding = new Padding(30, 0, 0, 0);
+            cbMelee.Size = new Size(173, 25);
+            cbMelee.TabIndex = 19;
+            cbMelee.Text = "Melee";
+            cbMelee.UseVisualStyleBackColor = true;
+            cbMelee.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbMartial
+            // 
+            cbMartial.AutoSize = true;
+            cbMartial.Checked = true;
+            cbMartial.CheckState = CheckState.Checked;
+            cbMartial.Dock = DockStyle.Top;
+            cbMartial.ForeColor = Color.Gainsboro;
+            cbMartial.Location = new Point(0, 50);
+            cbMartial.Name = "cbMartial";
+            cbMartial.Padding = new Padding(30, 0, 0, 0);
+            cbMartial.Size = new Size(173, 25);
+            cbMartial.TabIndex = 18;
+            cbMartial.Text = "Martial";
+            cbMartial.UseVisualStyleBackColor = true;
+            cbMartial.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbSimple
+            // 
+            cbSimple.AutoSize = true;
+            cbSimple.Checked = true;
+            cbSimple.CheckState = CheckState.Checked;
+            cbSimple.Dock = DockStyle.Top;
+            cbSimple.ForeColor = Color.Gainsboro;
+            cbSimple.Location = new Point(0, 25);
+            cbSimple.Name = "cbSimple";
+            cbSimple.Padding = new Padding(30, 0, 0, 0);
+            cbSimple.Size = new Size(173, 25);
+            cbSimple.TabIndex = 3;
+            cbSimple.Text = "Simple";
+            cbSimple.UseVisualStyleBackColor = true;
+            cbSimple.CheckedChanged += SubCBCheckedChanged;
+            // 
+            // cbWeaponAll
+            // 
+            cbWeaponAll.AutoSize = true;
+            cbWeaponAll.Checked = true;
+            cbWeaponAll.CheckState = CheckState.Checked;
+            cbWeaponAll.Dock = DockStyle.Top;
+            cbWeaponAll.ForeColor = Color.Gainsboro;
+            cbWeaponAll.Location = new Point(0, 0);
+            cbWeaponAll.Name = "cbWeaponAll";
+            cbWeaponAll.Padding = new Padding(30, 0, 0, 0);
+            cbWeaponAll.Size = new Size(173, 25);
+            cbWeaponAll.TabIndex = 2;
+            cbWeaponAll.Text = "All";
+            cbWeaponAll.UseVisualStyleBackColor = true;
+            cbWeaponAll.CheckStateChanged += AllCBCheckedStateChanged;
             // 
             // btnWeapons
             // 
             btnWeapons.Dock = DockStyle.Top;
-            btnWeapons.Enabled = false;
             btnWeapons.FlatAppearance.BorderColor = Color.FromArgb(62, 120, 138);
             btnWeapons.FlatStyle = FlatStyle.Flat;
             btnWeapons.ForeColor = Color.Gainsboro;
             btnWeapons.Location = new Point(0, 160);
             btnWeapons.Name = "btnWeapons";
             btnWeapons.Padding = new Padding(10, 0, 0, 0);
-            btnWeapons.Size = new Size(174, 35);
+            btnWeapons.Size = new Size(173, 35);
             btnWeapons.TabIndex = 3;
-            btnWeapons.Text = "Weapons";
+            btnWeapons.Text = "Weapon";
             btnWeapons.TextAlign = ContentAlignment.MiddleLeft;
             btnWeapons.UseVisualStyleBackColor = true;
+            btnWeapons.Click += btnWeapons_Click;
             // 
             // pRubrikSubMenu
             // 
@@ -537,7 +804,7 @@
             pRubrikSubMenu.Dock = DockStyle.Top;
             pRubrikSubMenu.Location = new Point(0, 35);
             pRubrikSubMenu.Name = "pRubrikSubMenu";
-            pRubrikSubMenu.Size = new Size(174, 125);
+            pRubrikSubMenu.Size = new Size(173, 125);
             pRubrikSubMenu.TabIndex = 2;
             // 
             // cbSummoning
@@ -550,11 +817,11 @@
             cbSummoning.Location = new Point(0, 100);
             cbSummoning.Name = "cbSummoning";
             cbSummoning.Padding = new Padding(30, 0, 0, 0);
-            cbSummoning.Size = new Size(174, 25);
+            cbSummoning.Size = new Size(173, 25);
             cbSummoning.TabIndex = 5;
             cbSummoning.Text = "Summoning";
             cbSummoning.UseVisualStyleBackColor = true;
-            cbSummoning.CheckedChanged += cbsRubrik_CheckstateChanged;
+            cbSummoning.CheckedChanged += SubCBCheckedChanged;
             // 
             // cbConsumable
             // 
@@ -566,11 +833,11 @@
             cbConsumable.Location = new Point(0, 75);
             cbConsumable.Name = "cbConsumable";
             cbConsumable.Padding = new Padding(30, 0, 0, 0);
-            cbConsumable.Size = new Size(174, 25);
+            cbConsumable.Size = new Size(173, 25);
             cbConsumable.TabIndex = 4;
             cbConsumable.Text = "Consumable";
             cbConsumable.UseVisualStyleBackColor = true;
-            cbConsumable.CheckedChanged += cbsRubrik_CheckstateChanged;
+            cbConsumable.CheckedChanged += SubCBCheckedChanged;
             // 
             // cbNoncombat
             // 
@@ -582,11 +849,11 @@
             cbNoncombat.Location = new Point(0, 50);
             cbNoncombat.Name = "cbNoncombat";
             cbNoncombat.Padding = new Padding(30, 0, 0, 0);
-            cbNoncombat.Size = new Size(174, 25);
+            cbNoncombat.Size = new Size(173, 25);
             cbNoncombat.TabIndex = 3;
             cbNoncombat.Text = "Noncombat";
             cbNoncombat.UseVisualStyleBackColor = true;
-            cbNoncombat.CheckedChanged += cbsRubrik_CheckstateChanged;
+            cbNoncombat.CheckedChanged += SubCBCheckedChanged;
             // 
             // cbCombat
             // 
@@ -598,11 +865,11 @@
             cbCombat.Location = new Point(0, 25);
             cbCombat.Name = "cbCombat";
             cbCombat.Padding = new Padding(30, 0, 0, 0);
-            cbCombat.Size = new Size(174, 25);
+            cbCombat.Size = new Size(173, 25);
             cbCombat.TabIndex = 2;
             cbCombat.Text = "Combat";
             cbCombat.UseVisualStyleBackColor = true;
-            cbCombat.CheckedChanged += cbsRubrik_CheckstateChanged;
+            cbCombat.CheckedChanged += SubCBCheckedChanged;
             // 
             // cbRubrikAll
             // 
@@ -614,11 +881,11 @@
             cbRubrikAll.Location = new Point(0, 0);
             cbRubrikAll.Name = "cbRubrikAll";
             cbRubrikAll.Padding = new Padding(30, 0, 0, 0);
-            cbRubrikAll.Size = new Size(174, 25);
+            cbRubrikAll.Size = new Size(173, 25);
             cbRubrikAll.TabIndex = 1;
             cbRubrikAll.Text = "All";
             cbRubrikAll.UseVisualStyleBackColor = true;
-            cbRubrikAll.CheckStateChanged += cbRubrikAll_CheckStateChanged;
+            cbRubrikAll.CheckStateChanged += AllCBCheckedStateChanged;
             // 
             // btnRubrik
             // 
@@ -629,7 +896,7 @@
             btnRubrik.Location = new Point(0, 0);
             btnRubrik.Name = "btnRubrik";
             btnRubrik.Padding = new Padding(10, 0, 0, 0);
-            btnRubrik.Size = new Size(174, 35);
+            btnRubrik.Size = new Size(173, 35);
             btnRubrik.TabIndex = 1;
             btnRubrik.Text = "Rubrik";
             btnRubrik.TextAlign = ContentAlignment.MiddleLeft;
@@ -638,11 +905,12 @@
             // 
             // pRightBorder
             // 
-            pRightBorder.BackColor = Color.FromArgb(255, 255, 128);
+            pRightBorder.BackColor = Color.FromArgb(62, 120, 138);
             pRightBorder.Dock = DockStyle.Right;
-            pRightBorder.Location = new Point(174, 0);
+            pRightBorder.Location = new Point(173, 0);
+            pRightBorder.Margin = new Padding(0);
             pRightBorder.Name = "pRightBorder";
-            pRightBorder.Size = new Size(1, 931);
+            pRightBorder.Size = new Size(2, 1211);
             pRightBorder.TabIndex = 10;
             // 
             // pGrid
@@ -650,8 +918,9 @@
             pGrid.Controls.Add(dgvResult);
             pGrid.Dock = DockStyle.Fill;
             pGrid.Location = new Point(196, 0);
+            pGrid.Margin = new Padding(0);
             pGrid.Name = "pGrid";
-            pGrid.Size = new Size(754, 845);
+            pGrid.Size = new Size(754, 848);
             pGrid.TabIndex = 2;
             // 
             // dgvResult
@@ -661,25 +930,26 @@
             dgvResult.AllowUserToResizeRows = false;
             dgvResult.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvResult.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvResult.BorderStyle = BorderStyle.None;
             dgvResult.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvResult.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvResult.DefaultCellStyle = dataGridViewCellStyle3;
             dgvResult.Dock = DockStyle.Fill;
             dgvResult.Location = new Point(0, 0);
             dgvResult.Name = "dgvResult";
             dgvResult.ReadOnly = true;
             dgvResult.RowHeadersVisible = false;
             dgvResult.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dgvResult.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dgvResult.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvResult.RowTemplate.Height = 29;
-            dgvResult.Size = new Size(754, 845);
+            dgvResult.Size = new Size(754, 848);
             dgvResult.TabIndex = 0;
             // 
             // MagicItemsForm
@@ -687,7 +957,7 @@
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(44, 41, 51);
-            ClientSize = new Size(950, 845);
+            ClientSize = new Size(950, 848);
             Controls.Add(pGrid);
             Controls.Add(pMiMenu);
             Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -697,15 +967,18 @@
             Text = "MagicItemsForm";
             Load += MagicItemsForm_Load;
             pMiMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numMax).EndInit();
             pMax.ResumeLayout(false);
             pMax.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numMax).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numMin).EndInit();
             pMin.ResumeLayout(false);
             pMin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numMin).EndInit();
             pWondrousSubMenu.ResumeLayout(false);
+            pWondrousSubMenu.PerformLayout();
             pArmorSubMenu.ResumeLayout(false);
+            pArmorSubMenu.PerformLayout();
             pWeaponsSubMenu.ResumeLayout(false);
+            pWeaponsSubMenu.PerformLayout();
             pRubrikSubMenu.ResumeLayout(false);
             pRubrikSubMenu.PerformLayout();
             pGrid.ResumeLayout(false);
@@ -717,25 +990,10 @@
 
         private Panel pMiMenu;
         private Panel pWondrousSubMenu;
-        private Button button19;
-        private Button button20;
-        private Button button21;
-        private Button button22;
-        private Button button23;
         private Button btnWondrous;
         private Panel pArmorSubMenu;
-        private Button button13;
-        private Button button14;
-        private Button button15;
-        private Button button16;
-        private Button button17;
         private Button btnArmor;
         private Panel pWeaponsSubMenu;
-        private Button button7;
-        private Button button8;
-        private Button button9;
-        private Button button10;
-        private Button button11;
         private Button btnWeapons;
         private Panel pRubrikSubMenu;
         private Button btnRubrik;
@@ -749,12 +1007,41 @@
         private Panel pMin;
         private Label lMinimum;
         private NumericUpDown numMin;
-        private Panel panel1;
         private CheckBox cbSummoning;
         private CheckBox cbConsumable;
         private CheckBox cbNoncombat;
         private CheckBox cbCombat;
         private CheckBox cbRubrikAll;
         private Panel pRightBorder;
+        private CheckBox cbShield;
+        private CheckBox cbHeavy;
+        private CheckBox cbMedium;
+        private CheckBox cbLight;
+        private CheckBox cbArmorAll;
+        private CheckBox cbSimple;
+        private CheckBox cbWeaponAll;
+        private CheckBox cbInstrument;
+        private CheckBox cbAccessorie;
+        private CheckBox cbClothing;
+        private CheckBox cbAlchemy;
+        private CheckBox cbWondrousAll;
+        private CheckBox cbMisc;
+        private CheckBox cbLiterature;
+        private CheckBox cbRod;
+        private CheckBox cbWand;
+        private Panel panel1;
+        private CheckBox cbLoading;
+        private CheckBox cbWLight;
+        private CheckBox cbWHeavy;
+        private CheckBox cbFinesse;
+        private CheckBox cbAmmunition;
+        private CheckBox cbRanged;
+        private CheckBox cbMelee;
+        private CheckBox cbMartial;
+        private CheckBox cbVersatile;
+        private CheckBox cbThrown;
+        private CheckBox cbTwoHanded;
+        private CheckBox cbSpecial;
+        private CheckBox cbReach;
     }
 }
