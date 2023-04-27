@@ -15,4 +15,10 @@
     <PackageReference Include="System.Data.SQLite.Linq" Version="1.0.117" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Magic_Items.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
