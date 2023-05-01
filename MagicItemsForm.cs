@@ -194,6 +194,19 @@ namespace LootGenerator
                 if (cbMisc.CheckState == CheckState.Checked)
                     query.AppendLine("OR w0.misc = true ");
             }
+            else if (cbWeaponAll.CheckState == CheckState.Unchecked && 
+                    cbArmorAll.CheckState == CheckState.Unchecked && 
+                    cbWondrousAll.CheckState == CheckState.Unchecked)   //Sonderfall, Anwender hat alles unchecked
+            {
+                query.AppendLine(
+                    "SELECT iw.Engl_Name, " +
+                           "iw.Price, " +
+                           "iw.Rubrik, " +
+                           "iw.Gamebreaking " +
+                    "FROM itemlist iw " +
+                    "JOIN wondrous w0 on w0.id = iw.id " +
+                    "WHERE 1<>1 ");
+            }
 
             //schränken Select auf Preis und Rubriken ein
             //ordnen Ergebnis per Zufall und geben ersten Treffer zurück
