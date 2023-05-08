@@ -194,8 +194,8 @@ namespace LootGenerator
                 if (cbMisc.CheckState == CheckState.Checked)
                     query.AppendLine("OR w0.misc = true ");
             }
-            else if (cbWeaponAll.CheckState == CheckState.Unchecked && 
-                    cbArmorAll.CheckState == CheckState.Unchecked && 
+            else if (cbWeaponAll.CheckState == CheckState.Unchecked &&
+                    cbArmorAll.CheckState == CheckState.Unchecked &&
                     cbWondrousAll.CheckState == CheckState.Unchecked)   //Sonderfall, Anwender hat alles unchecked
             {
                 query.AppendLine(
@@ -218,7 +218,7 @@ namespace LootGenerator
                 " AND l.Rubrik IN (" + string.Join(", ", rubriks) + ") " +
                 "ORDER BY RANDOM() " +
                 "LIMIT 1 ");
-            
+
             //nutzen Adapter um Select auszuführen und DataTable zu füllen
             SQLiteDataAdapter adapSQLite = new SQLiteDataAdapter(query.ToString(), FormMain.conSQLite);
             adapSQLite.Fill(fillTable);
@@ -345,7 +345,7 @@ namespace LootGenerator
                     {
                         all.CheckState = CheckState.Indeterminate;
                         all.CheckStateChanged += AllCBCheckedStateChanged;  //Eventhandler wurde zuvor in dieser Methode entfernt
-                        return; 
+                        return;
                     }
                 }
                 else

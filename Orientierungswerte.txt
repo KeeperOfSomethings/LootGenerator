@@ -6,3 +6,7 @@ Backcolor:
 
 BorderColor:
 62; 120; 138
+
+2023-05-01:
+- Steuerelemente liegen bei anderem Nutzer falsch
+- Docking der Preiswahl bearbeiten
