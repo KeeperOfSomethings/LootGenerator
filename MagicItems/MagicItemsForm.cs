@@ -283,10 +283,24 @@ namespace LootGenerator
         }
 
         /// <summary>
-        /// Ändern des Maximalpreises ändert höchstmöglichen Minimalpreis.
+        /// Ändern des Minimalpreises ändert höchstmöglichen Maximalpreis.
+        /// </summary>
+        private void numMin_ValueChanged(object sender, EventArgs e)
+        { numMax.Maximum = ((NumericUpDown)sender).Value; }
+
+        /// <summary>
+        /// Ändern des Maximalpreises ändert höchstmöglichen Minimalpreis, niedrigstmöglichen Gesamtpreis und gegebenenfalls auch aktuellen Gesamtpreis.
         /// </summary>
         private void numMax_ValueChanged(object sender, EventArgs e)
-        { numMin.Maximum = ((NumericUpDown)sender).Value; }
+        {
+            numMin.Maximum = ((NumericUpDown)sender).Value;
+
+            //ändern minimalen Gesamtpreis --> so kann der nicht später kleiner als Maximalpreis eingestellt werden
+            numSum.Minimum = ((NumericUpDown)sender).Value;
+
+            if (((NumericUpDown)sender).Value > numSum.Value)
+                numSum.Value = ((NumericUpDown)sender).Value;
+        }
 
         /// <summary>
         /// Ändern des Checkstates einer Checkbox ändert den Checkstate aller anderen Checkboxes in selbem Steuerelement.
@@ -386,7 +400,7 @@ namespace LootGenerator
         {
             miResultTable.Clear();
 
-            decimal wholePrice = numMax.Value;
+            decimal wholePrice = numSum.Value;
             int i = 0;
             int contrl = 1;
 
@@ -396,7 +410,9 @@ namespace LootGenerator
                 try
                 {
                     contrl = i;
-                    Generate_Item(miResultTable, numMin.Value, wholePrice);
+                    Generate_Item(miResultTable, 
+                                  numMin.Value, 
+                                  numMax.Value < wholePrice ? numMax.Value : wholePrice);
 
                     wholePrice = wholePrice - decimal.Parse(miResultTable.Rows[i][1].ToString());
                     i = miResultTable.Rows.Count;
@@ -416,5 +432,7 @@ namespace LootGenerator
             dgvResult.DataSource = reverseTable(miResultTable);
             dgvResult.Refresh();
         }
+
+
     }
 }

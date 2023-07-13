@@ -33,6 +33,9 @@
             pMiMenu = new Panel();
             btnMassloot = new Button();
             btnLoot = new Button();
+            numSum = new NumericUpDown();
+            pSum = new Panel();
+            lSum = new Label();
             numMax = new NumericUpDown();
             pMax = new Panel();
             lMax = new Label();
@@ -86,6 +89,8 @@
             pGrid = new Panel();
             dgvResult = new DataGridView();
             pMiMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numSum).BeginInit();
+            pSum.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numMax).BeginInit();
             pMax.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numMin).BeginInit();
@@ -105,6 +110,8 @@
             pMiMenu.BackColor = Color.FromArgb(44, 41, 51);
             pMiMenu.Controls.Add(btnMassloot);
             pMiMenu.Controls.Add(btnLoot);
+            pMiMenu.Controls.Add(numSum);
+            pMiMenu.Controls.Add(pSum);
             pMiMenu.Controls.Add(numMax);
             pMiMenu.Controls.Add(pMax);
             pMiMenu.Controls.Add(numMin);
@@ -123,7 +130,7 @@
             pMiMenu.Location = new Point(0, 0);
             pMiMenu.Margin = new Padding(0);
             pMiMenu.Name = "pMiMenu";
-            pMiMenu.Size = new Size(196, 848);
+            pMiMenu.Size = new Size(196, 600);
             pMiMenu.TabIndex = 1;
             // 
             // btnMassloot
@@ -132,7 +139,7 @@
             btnMassloot.FlatAppearance.BorderColor = Color.FromArgb(62, 120, 138);
             btnMassloot.FlatStyle = FlatStyle.Flat;
             btnMassloot.ForeColor = Color.Gainsboro;
-            btnMassloot.Location = new Point(0, 1176);
+            btnMassloot.Location = new Point(0, 1239);
             btnMassloot.Name = "btnMassloot";
             btnMassloot.Padding = new Padding(10, 0, 0, 0);
             btnMassloot.Size = new Size(173, 35);
@@ -148,7 +155,7 @@
             btnLoot.FlatAppearance.BorderColor = Color.FromArgb(62, 120, 138);
             btnLoot.FlatStyle = FlatStyle.Flat;
             btnLoot.ForeColor = Color.Gainsboro;
-            btnLoot.Location = new Point(0, 1141);
+            btnLoot.Location = new Point(0, 1204);
             btnLoot.Name = "btnLoot";
             btnLoot.Padding = new Padding(10, 0, 0, 0);
             btnLoot.Size = new Size(173, 35);
@@ -157,6 +164,36 @@
             btnLoot.TextAlign = ContentAlignment.MiddleLeft;
             btnLoot.UseVisualStyleBackColor = true;
             btnLoot.Click += btnLoot_Click;
+            // 
+            // numSum
+            // 
+            numSum.Dock = DockStyle.Top;
+            numSum.Location = new Point(0, 1176);
+            numSum.Maximum = new decimal(new int[] { -727379969, 232, 0, 0 });
+            numSum.Name = "numSum";
+            numSum.Size = new Size(173, 28);
+            numSum.TabIndex = 16;
+            numSum.TextAlign = HorizontalAlignment.Right;
+            // 
+            // pSum
+            // 
+            pSum.Controls.Add(lSum);
+            pSum.Dock = DockStyle.Top;
+            pSum.Location = new Point(0, 1141);
+            pSum.Name = "pSum";
+            pSum.Size = new Size(173, 35);
+            pSum.TabIndex = 17;
+            // 
+            // lSum
+            // 
+            lSum.AutoSize = true;
+            lSum.ForeColor = Color.Gainsboro;
+            lSum.Location = new Point(3, 7);
+            lSum.Name = "lSum";
+            lSum.Size = new Size(115, 21);
+            lSum.TabIndex = 0;
+            lSum.Text = "Gesamtpreis";
+            lSum.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // numMax
             // 
@@ -196,6 +233,7 @@
             numMin.Size = new Size(173, 28);
             numMin.TabIndex = 10;
             numMin.TextAlign = HorizontalAlignment.Right;
+            numMin.ValueChanged += numMin_ValueChanged;
             // 
             // pMin
             // 
@@ -910,7 +948,7 @@
             pRightBorder.Location = new Point(173, 0);
             pRightBorder.Margin = new Padding(0);
             pRightBorder.Name = "pRightBorder";
-            pRightBorder.Size = new Size(2, 1211);
+            pRightBorder.Size = new Size(2, 1274);
             pRightBorder.TabIndex = 10;
             // 
             // pGrid
@@ -920,7 +958,7 @@
             pGrid.Location = new Point(196, 0);
             pGrid.Margin = new Padding(0);
             pGrid.Name = "pGrid";
-            pGrid.Size = new Size(754, 848);
+            pGrid.Size = new Size(754, 600);
             pGrid.TabIndex = 2;
             // 
             // dgvResult
@@ -949,7 +987,7 @@
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dgvResult.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvResult.RowTemplate.Height = 29;
-            dgvResult.Size = new Size(754, 848);
+            dgvResult.Size = new Size(754, 600);
             dgvResult.TabIndex = 0;
             // 
             // MagicItemsForm
@@ -957,7 +995,7 @@
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(44, 41, 51);
-            ClientSize = new Size(950, 848);
+            ClientSize = new Size(950, 600);
             Controls.Add(pGrid);
             Controls.Add(pMiMenu);
             Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
@@ -967,6 +1005,9 @@
             Text = "MagicItemsForm";
             Load += MagicItemsForm_Load;
             pMiMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)numSum).EndInit();
+            pSum.ResumeLayout(false);
+            pSum.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numMax).EndInit();
             pMax.ResumeLayout(false);
             pMax.PerformLayout();
@@ -1043,5 +1084,8 @@
         private CheckBox cbTwoHanded;
         private CheckBox cbSpecial;
         private CheckBox cbReach;
+        private NumericUpDown numSum;
+        private Panel pSum;
+        private Label lSum;
     }
 }
