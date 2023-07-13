@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pMiMenu = new Panel();
             btnMassloot = new Button();
             btnLoot = new Button();
@@ -220,9 +220,9 @@
             lMax.ForeColor = Color.Gainsboro;
             lMax.Location = new Point(3, 7);
             lMax.Name = "lMax";
-            lMax.Size = new Size(135, 21);
+            lMax.Size = new Size(90, 21);
             lMax.TabIndex = 0;
-            lMax.Text = "maximaler Preis";
+            lMax.Text = "Maximum";
             lMax.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // numMin
@@ -250,9 +250,9 @@
             lMinimum.ForeColor = Color.Gainsboro;
             lMinimum.Location = new Point(3, 7);
             lMinimum.Name = "lMinimum";
-            lMinimum.Size = new Size(128, 21);
+            lMinimum.Size = new Size(83, 21);
             lMinimum.TabIndex = 0;
-            lMinimum.Text = "minimaler Preis";
+            lMinimum.Text = "Minimum";
             lMinimum.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -970,22 +970,22 @@
             dgvResult.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvResult.BorderStyle = BorderStyle.None;
             dgvResult.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dgvResult.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvResult.DefaultCellStyle = dataGridViewCellStyle3;
             dgvResult.Dock = DockStyle.Fill;
             dgvResult.Location = new Point(0, 0);
             dgvResult.Name = "dgvResult";
             dgvResult.ReadOnly = true;
             dgvResult.RowHeadersVisible = false;
             dgvResult.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dgvResult.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dgvResult.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvResult.RowTemplate.Height = 29;
             dgvResult.Size = new Size(754, 600);
             dgvResult.TabIndex = 0;
