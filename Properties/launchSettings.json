@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LootGenerator": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

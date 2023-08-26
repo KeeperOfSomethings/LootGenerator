@@ -283,10 +283,10 @@ namespace LootGenerator
         }
 
         /// <summary>
-        /// Ändern des Minimalpreises ändert höchstmöglichen Maximalpreis.
+        /// Ändern des Minimalpreises ändert niedrigstmöglichen Maximalpreis.
         /// </summary>
         private void numMin_ValueChanged(object sender, EventArgs e)
-        { numMax.Maximum = ((NumericUpDown)sender).Value; }
+        { numMax.Minimum = ((NumericUpDown)sender).Value; }
 
         /// <summary>
         /// Ändern des Maximalpreises ändert höchstmöglichen Minimalpreis, niedrigstmöglichen Gesamtpreis und gegebenenfalls auch aktuellen Gesamtpreis.
